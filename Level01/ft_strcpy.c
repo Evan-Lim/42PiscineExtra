@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elim-hon <elim-hon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/25 15:23:43 by elim-hon          #+#    #+#             */
-/*   Updated: 2026/08/25 15:23:46 by elim-hon         ###   ########.fr       */
+/*   Created: 2026/08/25 15:26:45 by elim-hon          #+#    #+#             */
+/*   Updated: 2026/08/25 15:39:42 by elim-hon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-	write(1, "Hello World!\n", 13);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   first_word.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elim-hon <elim-hon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/25 15:23:43 by elim-hon          #+#    #+#             */
-/*   Updated: 2026/08/25 15:23:46 by elim-hon         ###   ########.fr       */
+/*   Created: 2026/08/25 15:26:22 by elim-hon          #+#    #+#             */
+/*   Updated: 2026/08/25 15:35:41 by elim-hon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	write(1, "Hello World!\n", 13);
+	int	i;
+
+	i = 0;
+	if (argc == 2)
+	{
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
+			i++;
+		while (argv[1][i] != ' ' && argv[1][i] != '\t')
+			write(1, &argv[1][i++], 1);
+	}
+	write(1, "\n", 1);
 	return (0);
 }
